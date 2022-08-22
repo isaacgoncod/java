@@ -1,0 +1,21 @@
+package fundamentos;
+
+import java.util.Scanner;
+
+public class Temperatura {
+
+	public static void main(String[] args) {
+		// (F - 32) * 5/9 = C
+		
+		double fare = 100, cel;
+		final double i = 32, n = 5/9;
+		
+		System.out.println("Digíte o grau em Faren : ");
+		
+		
+		cel = (fare - i) * n;
+		
+		System.out.println(cel);
+		
+	}
+}
