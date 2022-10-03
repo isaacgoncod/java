@@ -10,16 +10,18 @@ public class LeituraDeDados {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Digíte seu nome completo");
-		
 		String nomeCompleto = scan.nextLine();
+		
 		System.out.println("Seu nome completo é: " + nomeCompleto);
 		
 		System.out.println("Digíte seu primeiro nome:");
 		String primeiroNome = scan.next();
+		
 		System.out.println("Seu primeiro nome é: "+ primeiroNome);
 		
 		System.out.println("Digíte sua idade:");
 		int idade = scan.nextInt();
+		
 		System.out.println("Sua idade é: " + idade);
 	}
 
