@@ -1,4 +1,4 @@
-package com.isaac.basico.aula10;
+package basico.aula10;
 
 public class Variaveis {
 
