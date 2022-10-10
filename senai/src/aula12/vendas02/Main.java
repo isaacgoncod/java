@@ -1,4 +1,4 @@
-package aula02.vendas02;
+package aula12.vendas02;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package aula02.vendas01;
+package aula12.vendas01;
 
 public class Venda {
 	

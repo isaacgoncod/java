@@ -1,11 +1,11 @@
-package aula02.notas02.classes;
+package aula13.notas02;
 
-public class Notas {
+public class Nota {
 
-	String aluno;
-	double portugues;
-	double matematica;
-	double ciencias;
+	private String aluno;
+	private double portugues;
+	private double matematica;
+	private double ciencias;
 
 	public double getMediaNota() {
 		return (portugues + matematica + ciencias) / 3;
