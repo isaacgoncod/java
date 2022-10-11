@@ -12,13 +12,12 @@ public class Nota {
 	}
 
 	// Contructor cheio
-	Nota(String setAluno, float setPortugues, float setMatematica, float setCiencias) {
-
-		aluno = setAluno;
-		portugues = setPortugues;
-		matematica = setMatematica;
-		ciencias = setCiencias;
-
+	public Nota(String aluno, float portugues, float matematica, float ciencias) {
+		super();
+		this.aluno = aluno;
+		this.portugues = portugues;
+		this.matematica = matematica;
+		this.ciencias = ciencias;
 	}
 
 	public float getMediaConceitual() {
