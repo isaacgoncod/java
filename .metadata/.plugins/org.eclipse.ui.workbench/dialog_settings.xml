@@ -16,6 +16,7 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
+			<item value="org.eclipse.ui.preferencePages.Globalization"/>
 			<item value="org.eclipse.jdt.ui.preferences.BuildPathPreferencePage"/>
 			<item value="org.eclipse.ui.preferencePages.Workspace"/>
 			<item value="org.eclipse.ui.console.ConsoleView"/>
@@ -23,6 +24,7 @@
 			<item value="org.eclipse.equinox.internal.p2.ui.sdk.scheduler.AutomaticUpdatesPreferencePage"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.e4.ui.parts"/>
@@ -35,8 +37,10 @@
 			<item value="1"/>
 			<item value="1"/>
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="textArray">
+			<item value="locale"/>
 			<item value="java buil"/>
 			<item value="works"/>
 			<item value="console"/>

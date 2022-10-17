@@ -1,10 +1,10 @@
-package nutricao.programa;
+package aula14.nutricao.programa;
 
 public class Paciente {
 
-	String nome;
-	float peso;
-	float altura;
+	private String nome;
+	private float peso;
+	private float altura;
 
 	public Paciente(String nome, float peso, float altura) {
 		super();
