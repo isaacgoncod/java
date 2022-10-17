@@ -1,4 +1,4 @@
-package aula13.scannerestruturado;
+package aula13.scanner.estruturado;
 
 import java.util.Scanner;
 

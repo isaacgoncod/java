@@ -3,7 +3,7 @@ package aula14.nutricao.programa;
 public class Paciente {
 
 	private String nome;
-	private float peso;
+	float peso;
 	private float altura;
 
 	public Paciente(String nome, float peso, float altura) {
@@ -16,7 +16,7 @@ public class Paciente {
 	public float getImc() {
 		return peso / (altura * altura);
 	}
-
+	
 	public String getDiagnostico() {
 		if(getImc() < 16) {
 			return "Subpeso Severo";
@@ -37,10 +37,35 @@ public class Paciente {
 		}
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+	public float getAltura() {
+		return altura;
+	}
+
+	public void setAltura(float altura) {
+		this.altura = altura;
+	}
+
 	@Override
 	public String toString() {
 		return "Paciente [nome=" + nome + ", peso=" + peso + ", altura=" + altura + ", getImc()=" + getImc()
 				+ ", getDiagnostico()=" + getDiagnostico() + "]";
 	}
+	
 	
 }

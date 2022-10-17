@@ -1,14 +1,3 @@
-<<<<<<< HEAD
 INDEX VERSION 1.131+D:\Isaac\GitHub\java\.metadata\.plugins\org.eclipse.jdt.core
-1509799344.index
 1925550385.index
-=======
-INDEX VERSION 1.131+/home/isaac/Documentos/java/.metadata/.plugins/org.eclipse.jdt.core
-2755750274.index
-2193125441.index
-582905876.index
-4285787742.index
->>>>>>> e8eeb3ae5635069b1e510b52d3bb7f4de8a72e3d
 1865797976.index
-3107936025.index
-4234080270.index
