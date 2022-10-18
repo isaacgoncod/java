@@ -1,13 +1,14 @@
-package aula14.nutricao.programa;
+package aula13.nutricao.programa;
 
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+
 		int qtd;
-		float aux;
 		String auxn;
+		float aux;
 		float somaImc = 0;
 		float somaPeso = 0;
 		float somaAlt = 0;
