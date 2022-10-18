@@ -11,7 +11,7 @@ public class Main {
 		float somaImc = 0;
 		float somaPeso = 0;
 		float somaAlt = 0;
-		
+
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("Digíte quantos pacientes deseja cadastrar: ");
 			qtd = scan.nextInt();
@@ -46,17 +46,6 @@ public class Main {
 						pacientes[i].nome = pacientes[j].nome;
 						pacientes[j].nome = auxn;
 					}
-					if (pacientes[i].altura < pacientes[j].altura) {
-
-						aux = pacientes[i].altura;
-						pacientes[i].altura = pacientes[j].altura;
-						pacientes[j].altura = aux;
-
-						auxn = pacientes[i].nome;
-						pacientes[i].nome = pacientes[j].nome;
-						pacientes[j].nome = auxn;
-						
-					}
 				}
 			}
 
@@ -74,7 +63,27 @@ public class Main {
 			System.out.println("O Paciente mais magro é: " + pacientes[0].nome);
 			System.out.println("O Paciente mais obeso é: " + pacientes[(qtd - 1)].nome);
 
-		}
+			for (int i = 0; i < qtd; i++) {
+				for (int j = 0; j < (qtd - 1); j++) {
 
+					if (pacientes[i].altura < pacientes[j].altura) {
+
+						aux = pacientes[i].altura;
+						pacientes[i].altura = pacientes[j].altura;
+						pacientes[j].altura = aux;
+
+						auxn = pacientes[i].nome;
+						pacientes[i].nome = pacientes[j].nome;
+						pacientes[j].nome = auxn;
+
+					}
+
+				}
+
+			}
+			System.out.println("O Paciente mais baixo é: " + pacientes[0].nome);
+			System.out.println("O Paciente mais alto é: " + pacientes[(qtd - 1)].nome);
+
+		}
 	}
 }
