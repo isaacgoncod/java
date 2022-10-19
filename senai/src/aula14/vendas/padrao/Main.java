@@ -18,7 +18,6 @@ public class Main {
 		try (Scanner scan = new Scanner(System.in)) {
 			System.out.println("Digite quantos produtos deseja cadastrar : ");
 			quantos = scan.nextInt();
-			float subTotal[] = new float[quantos];
 
 			for (int i = 0; i < quantos; i++) {
 				System.out.println(
@@ -26,14 +25,15 @@ public class Main {
 				vendas.add(new Venda(scan.next(), scan.nextFloat(), scan.nextFloat()));
 
 			}
+			float subTotal[] = new float[vendas.size()];
 
-			for (int i = 0; i < quantos; i++) {
-				subTotal[i] = (subTotal[i] + vendas.get(i).getSubtotal());
+			for (int i = 0; i < vendas.size(); i++) {
+				subTotal[i] += vendas.get(i).getSubtotal();
 				total += subTotal[i];
 			}
 
-			for (int i = 0; i < quantos; i++) {
-				for (int j = 0; j < (quantos - 1); j++) {
+			for (int i = 0; i < vendas.size(); i++) {
+				for (int j = 0; j < (vendas.size() - 1); j++) {
 					if (vendas.get(i).preco < vendas.get(j).preco) {
 
 						auxA = vendas.get(i).preco;
@@ -49,17 +49,17 @@ public class Main {
 			}
 
 			System.out.println("Produto\t\tPreco\tQuantidade\tSubtotal");
-			for (int i = 0; i < quantos; i++) {
+			for (int i = 0; i < vendas.size(); i++) {
 				System.out.printf("%s\t\t%.2f\t%.2f\t\t%.2f\t\n", vendas.get(i).produto, vendas.get(i).preco,
 						vendas.get(i).quantidade, subTotal[i]);
 			}
 		}
 
 		System.out.println("O produto mais barato é: " + vendas.get(0).produto);
-		System.out.println("O produto mais caro é: " + vendas.get(quantos - 1).produto);
+		System.out.println("O produto mais caro é: " + vendas.get(vendas.size() - 1).produto);
 
-		for (int i = 0; i < quantos; i++) {
-			for (int j = 0; j < (quantos - 1); j++) {
+		for (int i = 0; i < vendas.size(); i++) {
+			for (int j = 0; j < (vendas.size() - 1); j++) {
 				if (vendas.get(i).quantidade < vendas.get(j).quantidade) {
 
 					auxB = vendas.get(i).quantidade;
@@ -75,8 +75,8 @@ public class Main {
 		}
 
 		System.out.println("O total dos preços dos produtos: " + total);
-		System.out.println("A média dos precos: " + (total / quantos));
-		System.out.println("O produto mais vendido é: " + vendas.get(quantos - 1).produto);
+		System.out.println("A média dos precos: " + (total / vendas.size()));
+		System.out.println("O produto mais vendido é: " + vendas.get(vendas.size() - 1).produto);
 
 	}
 
