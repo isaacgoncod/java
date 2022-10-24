@@ -69,9 +69,8 @@ public class Main {
 		System.out.println("-------MEDIA TOTAL DE IDADE-------");
 		System.out.printf("\nMedia das pessoas cadastradas: %.2f\n", (totalMedia / pessoas.size()));
 		System.out.println("-------MEDIA RELATIVA DE IDADE-------");
-			System.out.printf("\nCrianca: %d\nJovem: %d\nAdulto: %d\nIdoso: %d\n\n", somaCrianca / qtdCrianca,
-					somaJovem / qtdJovem, somaAdulto / qtdAdulto, somaIdoso / qtdIdoso);
-
+		System.out.printf("\nCrianca: %d\nJovem: %d\nAdulto: %d\nIdoso: %d\n\n", (somaCrianca / qtdCrianca),
+				(somaJovem / qtdJovem), (somaAdulto / qtdAdulto), (somaIdoso / qtdIdoso));
 
 	}
 
