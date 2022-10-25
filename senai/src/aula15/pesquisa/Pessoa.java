@@ -5,7 +5,7 @@ public class Pessoa {
 	String nome;
 	String sobrenome;
 	int idade;
-	
+
 	public Pessoa(String nome, String sobrenome, int idade) {
 		super();
 		this.nome = nome;
@@ -29,8 +29,5 @@ public class Pessoa {
 			return "Idoso";
 		}
 	}
-	
-	
-	
 
 }

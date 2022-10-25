@@ -7,8 +7,7 @@ public class Operacao {
 	int qtdVendida;
 	float precoCompra;
 	float precoVenda;
-	
-	
+
 	public Operacao(String produto, int qtdComprada, int qtdVendida, float precoCompra, float precoVenda) {
 		super();
 		this.produto = produto;
@@ -47,12 +46,11 @@ public class Operacao {
 		}
 	}
 
-	@Override
 	public String toString() {
-		return "Operacao [produto=" + produto + ", qtdComprada=" + qtdComprada + ", qtdVendida=" + qtdVendida
-				+ ", precoCompra=" + precoCompra + ", precoVenda=" + precoVenda + ", investimento()=" + investimento()
-				+ ", faturamento()=" + faturamento() + ", lucroDinheiro()=" + lucroDinheiro() + ", lucroPorcentagem()="
-				+ lucroPorcentagem() + ", relacaoLucro()=" + relacaoLucro() + "]\n";
+		return String.format(
+				"%s  \t\t%d\t\t%d\t\t%.2f R$  \t\t%.2f R$  \t\t%.2f R$  \t\t%.2f R$  \t\t%.2f R$  \t\t%.2f %%  \t\t%s  \t\t",
+				produto, qtdComprada, qtdVendida, precoCompra, precoVenda, investimento(), faturamento(),
+				lucroDinheiro(), lucroPorcentagem(), relacaoLucro());
 	}
 
 }

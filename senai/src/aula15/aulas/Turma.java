@@ -1,14 +1,14 @@
 package aula15.aulas;
 
 public class Turma {
-	
+
 	String nomeTurma;
 	String periodo;
 	String diaDaSemana;
 	int numAlunos;
 	int horasSemanais;
 	float mensalidade;
-	
+
 	public Turma(String nomeTurma, String periodo, String diaDaSemana, int numAlunos, int horasSemanais,
 			float mensalidade) {
 		super();
@@ -19,13 +19,13 @@ public class Turma {
 		this.horasSemanais = horasSemanais;
 		this.mensalidade = mensalidade;
 	}
-	
+
 	public float faturamentoMensal() {
-		return 0;
+		return mensalidade * numAlunos;
 	}
-	
-	public float faturamentoPorHora() {
-		return 0;
+
+	public double faturamentoPorHora() {
+		return (faturamentoMensal() / (horasSemanais * 4.5));
 	}
-	
+
 }
