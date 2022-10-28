@@ -30,4 +30,10 @@ public class Pessoa {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s     \t%s    \t%d\t\t%s\n", nome, sobrenome, idade, faseDaVida());
+	}
+	
+
 }

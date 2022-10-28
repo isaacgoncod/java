@@ -30,11 +30,14 @@ public class Main {
 
 		System.out.println(
 				"nomeTurma\t\tperiodo\t\tdiaSemana\tnumAlunos\thorasSemanais\tmensalidade\tfaturamentoMensal\tfaturamentoHora");
-		for (int i = 0; i < turmas.size(); i++) {
-			System.out.printf("%s\t\t%s\t\t%s\t\t%d\t\t%d\t\t%.2f\t\t%.2f\t\t\t%.2f\n", turmas.get(i).nomeTurma,
-					turmas.get(i).periodo, turmas.get(i).diaDaSemana, turmas.get(i).numAlunos,
-					turmas.get(i).horasSemanais, turmas.get(i).mensalidade, turmas.get(i).faturamentoMensal(),
-					turmas.get(i).faturamentoPorHora());
+//		for (int i = 0; i < turmas.size(); i++) {
+//			System.out.printf("%s\t\t%s\t\t%s\t\t%d\t\t%d\t\t%.2f\t\t%.2f\t\t\t%.2f\n", turmas.get(i).nomeTurma,
+//					turmas.get(i).periodo, turmas.get(i).diaDaSemana, turmas.get(i).numAlunos,
+//					turmas.get(i).horasSemanais, turmas.get(i).mensalidade, turmas.get(i).faturamentoMensal(),
+//					turmas.get(i).faturamentoPorHora());
+//		}
+		for (Turma turma : turmas) {
+			System.out.printf(turma.toString());
 		}
 		System.out.println();
 		System.out.printf("O faturamento total e de: R$ %.2f", faturamentoTotal);

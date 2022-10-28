@@ -19,9 +19,9 @@ public class Main {
 			System.out.println("Digite quantos produtos deseja cadastrar : ");
 			quantos = scan.nextInt();
 
+			System.out
+					.println("Digíte o nome, quantidade(U)e o preco(R$) dos produtos respectivamente: ");
 			for (int i = 0; i < quantos; i++) {
-				System.out.println(
-						"Digíte o nome, preco(R$) e a quantidade(U) do " + (i + 1) + "º produto respectivamente: ");
 				vendas.add(new Venda(scan.next(), scan.nextFloat(), scan.nextFloat()));
 
 			}

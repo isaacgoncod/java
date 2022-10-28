@@ -3,14 +3,14 @@ package aula14.vendas.padrao;
 public class Venda {
 
 	String produto;
-	float preco;
 	float quantidade;
+	float preco;
 
-	public Venda(String produto, float preco, float quantidade) {
+	public Venda(String produto, float quantidade, float preco) {
 		super();
 		this.produto = produto;
-		this.preco = preco;
 		this.quantidade = quantidade;
+		this.preco = preco;
 	}
 
 	public float getSubtotal() {

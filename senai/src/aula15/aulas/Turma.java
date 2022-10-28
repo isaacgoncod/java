@@ -28,4 +28,11 @@ public class Turma {
 		return (faturamentoMensal() / (horasSemanais * 4.5));
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s\t\t%s\t\t%s\t\t%d\t\t%d\t\t%.2f\t\t%.2f\t\t\t%.2f\n", nomeTurma, periodo, diaDaSemana,
+				numAlunos, horasSemanais, mensalidade, faturamentoMensal(), faturamentoPorHora());
+
+	}
+
 }
