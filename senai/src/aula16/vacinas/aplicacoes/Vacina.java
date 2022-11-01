@@ -1,13 +1,13 @@
 package aula16.vacinas.aplicacoes;
 
-import java.util.Date;
-
 public class Vacina {
 
 	private String nomePet;
 	private String veterinario;
 	private String nomeVacina;
-	private Date data;
+	private int dia;
+	private int mes;
+	private int ano;
 
 	public int vacinadoAquantosDias() {
 		
@@ -38,17 +38,33 @@ public class Vacina {
 		this.nomeVacina = nomeVacina;
 	}
 
-	public Date getData() {
-		return data;
+	public int getDia() {
+		return dia;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
 	@Override
 	public String toString() {
-		return String.format("%s\t\t%s\t\t%s\n", nomePet, veterinario, nomeVacina);
+		return String.format("%s\t\t%s\t\t%s\t\t%d/%d/%d\n", nomePet, veterinario, nomeVacina,dia, mes, ano);
 	}
 	
 	
