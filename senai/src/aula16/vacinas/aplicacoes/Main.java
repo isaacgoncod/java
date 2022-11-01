@@ -3,8 +3,6 @@ package aula16.vacinas.aplicacoes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import aula16.vendas.modelo.Venda;
-
 public class Main {
 
 	static Scanner scan = new Scanner(System.in);
@@ -46,14 +44,18 @@ public class Main {
 
 				break;
 			case 3:
-				System.out.println("NomePet\t\tVeterinario\tNomeVacina");
-				read();
+				System.out.println("Digite qual dado deseja alterar:");
+				update(scan.nextInt());
 
 				break;
 			case 4:
-				System.out.println();
+				System.out.println("Qual número de registro deseja-se excluir:");
+				delete(scan.nextInt());
+
 				break;
 			case 5:
+				System.out.println("Nome do PET:");
+				
 				break;
 			case 6:
 				break;
@@ -66,6 +68,7 @@ public class Main {
 				System.out.println("Opção inválida");
 				break;
 			}
+			System.out.println("-------------------------------------------------------");
 		}
 	}
 
@@ -83,10 +86,10 @@ public class Main {
 			System.out.println(vacina.toString());
 		}
 	}
-	
+
 	public static void delete(int indice) {
 		if (indice >= 0 && indice <= vacinas.size()) {
-			vacinas.remove((indice));
+			vacinas.remove(indice);
 			System.out.println("Item excluido");
 
 		} else {
@@ -96,7 +99,7 @@ public class Main {
 
 	public static void update(int indice) {
 		if (indice >= 0 && indice <= vacinas.size()) {
-			System.out.println(vacinas.get((indice)).toString());
+			System.out.println(vacinas.get(indice).toString());
 
 			Vacina vacina = new Vacina();
 
@@ -104,12 +107,16 @@ public class Main {
 			vacina.setVeterinario(scan.next());
 			vacina.setNomeVacina(scan.next());
 			vacinas.set(indice, vacina);
-			
+
 			System.out.println("Item alterado");
 
 		} else {
 			System.out.println("Item invalido.");
 		}
 
+	}
+	
+	public static void consultaPet(String pet) {
+		
 	}
 }

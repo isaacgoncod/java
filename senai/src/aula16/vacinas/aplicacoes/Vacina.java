@@ -48,7 +48,7 @@ public class Vacina {
 
 	@Override
 	public String toString() {
-		return String.format("%s\t\t%s\t%s", nomePet, veterinario, nomeVacina);
+		return String.format("%s\t\t%s\t\t%s\n", nomePet, veterinario, nomeVacina);
 	}
 	
 	
