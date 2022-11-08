@@ -39,7 +39,7 @@ public class Main {
 				System.out.println("Digíte quantos cadastramentos deseja-se realizar:");
 				qtd = scan.nextInt();
 
-				System.out.println("Digite o nome do PET, VETERINARIO, VACINA e DATA respectivamente: ");
+				System.out.println("Digite o nome do PET, VETERINARIO, VACINA e DATA(separada por espaço) respectivamente: ");
 
 				for (int i = 0; i < qtd; i++) {
 					create();
