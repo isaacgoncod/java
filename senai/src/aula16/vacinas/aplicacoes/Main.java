@@ -103,20 +103,26 @@ public class Main {
 	}
 
 	public static void read() {
-		for (Vacina vacina : vacinas) {
-			System.out.printf(vacina.toString());
-			if (anoAtual > vacina.getAno()) {
-				System.out.printf("Vacinado a " + (anoAtual - vacina.getAno()) + " anos\n\n");
-			} else if (anoAtual == vacina.getAno()) {
-				if (mesAtual > vacina.getMes()) {
-					System.out.printf("Vacinado a " + (mesAtual - vacina.getMes() + 1) + " meses\n\n");
-				} else if (mesAtual + 1 == vacina.getMes()) {
-					if (diaAtual > vacina.getDia()) {
-						System.out.printf("Vacinado a " + (diaAtual - vacina.getDia()) + " dias\n\n");
-					} else if (diaAtual == vacina.getDia()) {
-						System.out.printf("Vacinado hoje!\n\n");
+		for (Vacina v : vacinas) {
+			System.out.printf(v.toString());
+			if (anoAtual > v.getAno()) {
+				System.out.println("  Vacinado a " + (anoAtual - v.getAno()) + " anos");
+			} else if (anoAtual == v.getAno()) {
+				if (mesAtual > v.getMes()) {
+					System.out.println("  Vacinado a " + (mesAtual - v.getMes() + 1) + " meses");
+				} else if (mesAtual + 1 == v.getMes()) {
+					if (diaAtual > v.getDia()) {
+						System.out.println("  Vacinado a " + (diaAtual - v.getDia()) + " dias");
+					} else if (diaAtual == v.getDia()) {
+						System.out.println("  Vacinado hoje!");
+					} else if (diaAtual < v.getDia()) {
+						System.out.println("Agendado para daqui " + (v.getDia() - diaAtual) + " dias");
 					}
+				} else if (mesAtual + 1 < v.getMes()) {
+					System.out.println("Agendado para daqui " + (v.getMes() - mesAtual) + " meses");
 				}
+			} else if (	anoAtual < v.getAno()) {
+				System.out.println("Agendado para daqui " + (v.getAno() - anoAtual) + " anos");
 			}
 		}
 	}
