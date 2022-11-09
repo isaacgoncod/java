@@ -99,6 +99,7 @@ public class Main {
 				break;
 			case 3:
 				alterar();
+				
 				break;
 			case 4:
 				excluir();

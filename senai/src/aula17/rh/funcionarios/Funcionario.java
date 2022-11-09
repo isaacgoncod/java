@@ -8,7 +8,7 @@ public class Funcionario {
 
 	private int matricula;
 	private String nome;
-	private Calendar nascimento = Calendar.getInstance();;
+	private Calendar nascimento = Calendar.getInstance();
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
