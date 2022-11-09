@@ -18,21 +18,50 @@ public class Main {
 			System.out.println(i);
 		}
 	}
-	
+
 	public static void cadastrar() throws ParseException {
-		
-		int qtd ;
-		
+
+		int qtd;
+
 		System.out.println("Digite a quantidade de cadastros para o registro: ");
 		qtd = scan.nextInt();
-		
-		System.out.println("Matricula\tNome\tData");
-		for(int i = 0; i < qtd; i++	) {
-			funcionarios.add(new Funcionario(scan.nextInt(), scan.next(), scan.next() ))
+
+		System.out.println("Matricula\tNome\tdataNascimento");
+		for (int i = 0; i < qtd; i++) {
+			funcionarios.add(new Funcionario(scan.nextInt(), scan.next(), scan.next()));
 		}
 	}
+	
+	public static void listarTodas() {
+		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
+		for(int i = 0; i < funcionarios.size(); i++) {
+			System.out.println(i + "\t" + funcionarios.get(i));
+		}
+	}
+	
+	public static void alterar() throws ParseException {
+		
+		int indice;
+		
+		System.out.println("Digite o indice da vacina:");
+		indice = scan.nextInt();
+		
+		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
+		System.out.println(indice + "\t" + funcionarios.get(indice));
+		funcionarios.add(new Funcionario(scan.nextInt(), scan.next(), scan.next()));
+		System.out.println("Registro Alterado");
+	}
+	
+	public static void excluir() {
+		
+		int indice;
+		
+		System.out.println("Digite o indice do funcionario:");
+		indice = scan.nextInt();
+		
+	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		while (menu != 8) {
 			items(opcoes);
@@ -41,6 +70,7 @@ public class Main {
 			switch (menu) {
 
 			case 1:
+				cadastrar();
 
 				break;
 			case 2:

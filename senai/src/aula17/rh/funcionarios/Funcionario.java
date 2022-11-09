@@ -12,7 +12,7 @@ public class Funcionario {
 
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-	public Funcionario(int matricula, String nome, String nascimento) throws ParseException {{
+	public Funcionario(int matricula, String nome, String nascimento) throws ParseException {
 		this.matricula = matricula;
 		this.nome = nome;
 		this.nascimento.setTime(sdf.parse(nascimento));	
