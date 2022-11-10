@@ -7,10 +7,10 @@ public class Eleicao {
 
 	public String governador() {
 		if (numeroG == 10) {
-			return "TARCISIO GOMES DE FREITAS\n\tPRESIDENTE: JAIR MESSIAS BOLSONARO";
+			return "TARCISIO GOMES DE FREITAS\n\tPRESIDENTE: JAIR MESSIAS BOLSONARO 22";
 		}
 		if (numeroG == 13) {
-			return "FERNANDO HADDAD\n\tPRESIDENTE: LUIZ INACIO LULA DA SILVA";
+			return "FERNANDO HADDAD\n\tPRESIDENTE: LUIZ INACIO LULA DA SILVA 13";
 		}
 		if (numeroG == 00 || numeroG == 0) {
 			return "GOVERNADOR : VOTO BRANCO";
