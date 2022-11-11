@@ -22,10 +22,10 @@ public class Main {
 
 			System.out.println(votos.getGovernador());
 			if (votos.getGovernador().equals("TARCISIO GOMES DE FREITAS")) {
-				System.out.println("\tJAIR MESSIAS BOLSONARO 22\n\n NUMERO: " + votos.getNumeroG());
+				System.out.println("\tPRESIDENTE: JAIR MESSIAS BOLSONARO 22\n\n NUMERO: " + votos.getNumeroG());
 			}
 			if (votos.getGovernador().equals("FERNANDO HADDAD")) {
-				System.out.println("\tLUIZ INACIO LULA DA SILVA 13\n\n NUMERO: " + votos.getNumeroG());
+				System.out.println("\tPRESIDENTE: LUIZ INACIO LULA DA SILVA 13\n\n NUMERO: " + votos.getNumeroG());
 			}
 			if (votos.getGovernador().equals("GOVERNADOR : VOTO BRANCO")) {
 				System.out.println("NUMERO: " + votos.getNumeroG());
@@ -34,8 +34,10 @@ public class Main {
 				System.out.println("NUMERO: " + votos.getNumeroG());
 			}
 
-			System.out.println("Tem certeza de seu voto?\n1-SIM\n2-NAO");
+			System.out.println("CONFIRMAR?\n1-SIM\n0-NAO");
 			menuG = scan.nextInt();
+			
+			if(menuG == 1) System.out.println("CONFIRMADO");
 		}
 
 		while (menuP != 1) {
@@ -45,8 +47,10 @@ public class Main {
 			System.out.println(votos.getPresidente());
 			System.out.println("\nNUMERO: " + votos.getNumeroP());
 
-			System.out.println("Tem certeza de seu voto?\n1-SIM\n2-NAO");
+			System.out.println("CONFIRMAR?\n1-SIM\n0-NAO");
 			menuP = scan.nextInt();
+			
+			if(menuG == 1) System.out.println("CONFIRMADO");
 		}
 
 		try {
