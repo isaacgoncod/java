@@ -7,10 +7,10 @@ public class Eleicao {
 
 	public String governador() {
 		if (numeroG == 10) {
-			return "TARCISIO GOMES DE FREITAS\n\tPRESIDENTE: JAIR MESSIAS BOLSONARO 22";
+			return "TARCISIO GOMES DE FREITAS";
 		}
 		if (numeroG == 13) {
-			return "FERNANDO HADDAD\n\tPRESIDENTE: LUIZ INACIO LULA DA SILVA 13";
+			return "FERNANDO HADDAD";
 		}
 		if (numeroG == 00 || numeroG == 0) {
 			return "GOVERNADOR : VOTO BRANCO";
@@ -57,8 +57,7 @@ public class Eleicao {
 		this.numeroP = numeroP;
 	}
 
-	@Override
-	public String toString() {
+	public String toCSV() {
 		return String.format("%s;%d\r\n%s;%d\r\n", governador(), numeroG, presidente(), numeroP);
 	}
 

@@ -21,7 +21,7 @@ public class Main {
 		
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios/fgts/bancodados/fgts.csv", true));
-			bw.write(fundos.toString());
+			bw.write(fundos.toCSV());
 			bw.close();
 			System.out.println("Arquivo criado com sucesso.");
 

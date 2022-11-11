@@ -21,7 +21,7 @@ public class Main {
 		
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios/irrf/bancodados/irrf.csv", true));
-			bw.write(impostos.toString());
+			bw.write(impostos.toCSV());
 			bw.close();
 			
 			System.out.println("Arquivo criado com sucesso.");

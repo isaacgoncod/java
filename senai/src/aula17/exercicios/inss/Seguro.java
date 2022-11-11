@@ -19,7 +19,7 @@ public class Seguro {
 			return salario * 14 / 100;
 
 		} else {
-			return salario * 14 / 100;
+			return 7087.22 * 14 / 100;
 
 		}
 	}
@@ -42,6 +42,9 @@ public class Seguro {
 
 	@Override
 	public String toString() {
+		return String.format("%s\t%.2f\t%.2f\r\n", nome, salario, inss());
+	}
+	public String toCSV() {
 		return String.format("%s;%.2f;%.2f\r\n", nome, salario, inss());
 	}
 	

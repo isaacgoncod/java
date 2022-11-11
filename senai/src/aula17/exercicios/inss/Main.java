@@ -21,7 +21,7 @@ public class Main {
 		
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios/inss/bancodados/inss.csv", true));
-			bw.write(seguros.toString());
+			bw.write(seguros.toCSV());
 			bw.close();
 			
 			System.out.println("Arquivo criado com sucesso.");

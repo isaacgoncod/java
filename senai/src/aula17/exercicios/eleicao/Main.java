@@ -21,10 +21,21 @@ public class Main {
 			votos.setNumeroG(scan.nextInt());
 
 			System.out.println(votos.getGovernador());
+			if (votos.getGovernador().equals("TARCISIO GOMES DE FREITAS")) {
+				System.out.println("\tJAIR MESSIAS BOLSONARO 22\n\n NUMERO: " + votos.getNumeroG());
+			}
+			if (votos.getGovernador().equals("FERNANDO HADDAD")) {
+				System.out.println("\tLUIZ INACIO LULA DA SILVA 13\n\n NUMERO: " + votos.getNumeroG());
+			}
+			if (votos.getGovernador().equals("GOVERNADOR : VOTO BRANCO")) {
+				System.out.println("NUMERO: " + votos.getNumeroG());
+			}
+			if (votos.getGovernador().equals("GOVERNADOR : VOTO NULO")) {
+				System.out.println("NUMERO: " + votos.getNumeroG());
+			}
 
 			System.out.println("Tem certeza de seu voto?\n1-SIM\n2-NAO");
 			menuG = scan.nextInt();
-
 		}
 
 		while (menuP != 1) {
@@ -32,6 +43,7 @@ public class Main {
 			votos.setNumeroP(scan.nextInt());
 
 			System.out.println(votos.getPresidente());
+			System.out.println("\nNUMERO: " + votos.getNumeroP());
 
 			System.out.println("Tem certeza de seu voto?\n1-SIM\n2-NAO");
 			menuP = scan.nextInt();
@@ -40,7 +52,7 @@ public class Main {
 		try {
 			BufferedWriter bw = new BufferedWriter(
 					new FileWriter("./src/aula17/exercicios/eleicao/bancodados/eleicao.csv", true));
-			bw.write(votos.toString());
+			bw.write(votos.toCSV());
 			bw.close();
 
 			System.out.println("FIM!");
