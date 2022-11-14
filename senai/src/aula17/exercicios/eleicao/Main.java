@@ -78,31 +78,7 @@ public class Main {
 			String s = null;
 
 			while ((s = br.readLine()) != null) {
-				if (s.equals("TARCISIO GOMES DE FREITAS")) {
-					contGt++;
-				}
-				if (s.equals("FERNANDO HADDAD")) {
-					contGf++;
-				}
-				if (s.equals("GOVERNADOR : VOTO BRANCO")) {
-					contGb++;
-				}
-				if (s.equals("GOVERNADOR : VOTO NULO")) {
-					contGn++;
-				}
-				if (s.equals("LUIZ INACIO LULA DA SILVA")) {
-					contPl++;
-				}
-				if (s.equals("JAIR MESSIAS BOLSONARO")) {
-					contPj++;
-					System.out.println("JAIR MESSIAS BOLSONARO: " + contPj);
-				}
-				if (s.equals("PRESIDENTE : VOTO BRANCO")) {
-					contPb++;
-				}
-				if (s.equals("PRESIDENTE : VOTO NULO")) {
-					contPn++;
-				}
+				System.out.println(s);
 			}
 			br.close();
 
