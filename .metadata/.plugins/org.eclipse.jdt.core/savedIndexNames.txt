@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+/home/isaac/Documentos/java/.metadata/.plugins/org.eclipse.jdt.core
-2193125441.index
-4285787742.index
-1865797976.index
