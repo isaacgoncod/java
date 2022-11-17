@@ -88,7 +88,7 @@ public class Main {
 
 		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
 		for (int i = 0; i < funcionarios.size(); i++) {
-			if (funcionarios.get(i).getMatricula().contains(matricula)) {
+			if (funcionarios) {
 				System.out.println(i + "\t" + funcionarios.get(i));
 			}
 		}

@@ -8,20 +8,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-
+	
+	static int menuG;
+	static int menuP;
+	
 	static Scanner scan = new Scanner(System.in);
 
-	static int menuG = 0;
-	static int menuP = 0;
-	static int contGt = 0;
-	static int contGf = 0;
-	static int contGb = 0;
-	static int contGn = 0;
-	static int contPl = 0;
-	static int contPj = 0;
-	static int contPb = 0;
-	static int contPn = 0;
-	
 	public static void main(String[] args) {
 
 		Eleicao votos = new Eleicao();
@@ -66,15 +58,13 @@ public class Main {
 		}
 
 		try {
-			BufferedWriter bw = new BufferedWriter(
-					new FileWriter("./src/aula17/exercicios/eleicao/bancodados/eleicao.csv", true));
+			BufferedWriter bw = new BufferedWriter(new FileWriter("./bancodados/eleicao.csv", true));
 			bw.write(votos.toCSV());
 			bw.close();
 
 			System.out.println("FIM!");
 
-			BufferedReader br = new BufferedReader(
-					new FileReader("./src/aula17/exercicios/eleicao/bancodados/eleicao.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("./bancodados/eleicao.csv"));
 			String s = null;
 
 			while ((s = br.readLine()) != null) {
