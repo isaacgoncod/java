@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd344af2-eec3-4c4f-ae7b-27a7c992b6a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../AulaPOO/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../AulaPOO/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../AulaPOO/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../AulaPOO/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../AulaPOO/AulaPOO.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/src/livrojava/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/src/livrojava/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/src/livrojava/AccountTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/src/livrojava/AccountTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/src/livrojava/Dialog1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../livrojava/src/livrojava/NameDialog.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="2HhYgtap9OTQyB22X6ErTrtjE6S" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/isaac/Documentos/fpoo"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd344af2-eec3-4c4f-ae7b-27a7c992b6a5" name="Changes" comment="" />
+      <created>1668738902166</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668738902166</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
