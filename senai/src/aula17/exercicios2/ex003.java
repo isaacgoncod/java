@@ -13,12 +13,12 @@ public class ex003 {
 	static BufferedWriter bw;
 	
 	static int i = 0;
+	static int ano = 0;
 	static float total = 0f;
 	static float media = 0f;
 	static float preco = 0f;
 	static float caro = 0f;
 	static float barato = 1000000f;
-	static float ano = 0f;
 	static float novo = 0f;
 	static float velho = 10000000f;
 	
@@ -45,7 +45,7 @@ public class ex003 {
 
 				if (i != 0) {
 					preco = Float.parseFloat(vetor[2]);
-					ano = Float.parseFloat(vetor[1]);
+					ano = Integer.parseInt(vetor[1]);
 
 					if (caro < preco) {
 						caro = preco;
@@ -85,7 +85,7 @@ public class ex003 {
 		}
 		System.out.printf("A média de preços = R$ %.2f\n", media);
 		System.out.println("O veículo mais caro é: " + linhaCaro);
-		System.out.println("O veícul0 mais barato é: " + linhaBarato);
+		System.out.println("O veículo mais barato é: " + linhaBarato);
 		System.out.println("O veículo mais velho é : " + linhaVelho);
 		System.out.println("O veículo mais novo é : " + linhaNovo);
 

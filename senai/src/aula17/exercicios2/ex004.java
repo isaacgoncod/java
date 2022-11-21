@@ -1,13 +1,16 @@
 package aula17.exercicios2;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class ex004 {
 
 	static BufferedReader br;
+	static BufferedWriter bw;
 
 	static int i = 0;
 	static int contLula = 0;
@@ -40,6 +43,13 @@ public class ex004 {
 		}
 	}
 
+	public static String toTXT() {
+		return "Votos para o LULA: " + contLula + " = " + porcentLula + "%\r\nVotos para o BOLSONARO: " + contBolsonaro
+				+ " = " + porcentBolsonaro + "%\r\nVotos BRANCOS: " + contBranco + " = " + porcentBranco
+				+ "%\r\nVotos NULOS: " + contNulo + " = " + porcentNulo + "%\r\nO candidato " + eleito
+				+ " foi eleito em segundo turno com " + porcentEleito + "% dos votos";
+	}
+
 	public static void main(String[] args) {
 
 		try {
@@ -66,10 +76,14 @@ public class ex004 {
 				}
 				i++;
 				linha = br.readLine();
-				
+
 			}
 			porcentVotos();
 			br.close();
+
+			bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios2/bd/apuracao.txt", true));
+			bw.write(toTXT());
+			bw.close();
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Arquivo não encontrado, erro: " + e);
