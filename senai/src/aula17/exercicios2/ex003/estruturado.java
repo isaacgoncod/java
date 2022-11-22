@@ -1,4 +1,4 @@
-package aula17.exercicios2;
+package aula17.exercicios2.ex003;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,14 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ex003 {
+public class estruturado {
 
 	static BufferedReader br;
 	static BufferedWriter bw;
 	
 	static int i = 0;
 	static int ano = 0;
-	static float total = 0f;
 	static float media = 0f;
 	static float preco = 0f;
 	static float caro = 0f;
@@ -34,7 +33,7 @@ public class ex003 {
 	
 	public static void main(String[] args) {
 		try {
-			br = new BufferedReader(new FileReader("./src/aula17/exercicios2/bd/dados2.csv"));
+			br = new BufferedReader(new FileReader("./src/aula17/exercicios2/ex003/bd/dados2.csv"));
 			String linhaR = br.readLine();
 			
 
@@ -63,16 +62,16 @@ public class ex003 {
 						novo = ano;
 						linhaNovo = linhaR;
 					}
-					total += preco;
+					media += preco;
 				}
 				i++;
 				linhaR = br.readLine();
 			}
 			br.close();
 			
-			media = total / i;
+			media = media / i;
 			
-			bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios2/bd/relatorio.txt", true));
+			bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios2/ex003/bd/relatorio.txt"));
 			bw.write(toTXT());
 			bw.close();
 

@@ -1,4 +1,4 @@
-package aula17.exercicios2;
+package aula17.exercicios2.ex004;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ex004 {
+public class estruturado {
 
 	static BufferedReader br;
 	static BufferedWriter bw;
@@ -53,7 +53,7 @@ public class ex004 {
 	public static void main(String[] args) {
 
 		try {
-			br = new BufferedReader(new FileReader("./src/aula17/exercicios2/bd/eleicao.csv"));
+			br = new BufferedReader(new FileReader("./src/aula17/exercicios2/ex004/bd/eleicao.csv"));
 			String linha = br.readLine();
 
 			while (linha != null) {
@@ -81,7 +81,7 @@ public class ex004 {
 			porcentVotos();
 			br.close();
 
-			bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios2/bd/apuracao.txt", true));
+			bw = new BufferedWriter(new FileWriter("./src/aula17/exercicios2/ex004/bd/apuracao.txt"));
 			bw.write(toTXT());
 			bw.close();
 
