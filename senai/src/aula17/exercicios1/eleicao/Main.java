@@ -47,27 +47,30 @@ public class Main {
 		porcentBrancoG = (contBrancoG * 100 / contTotal);
 		porcentNuloG = (contNuloG * 100 / contTotal);
 
-		if (porcentLula > porcentBolsonaro || porcentTarcisio > porcentHaddad) {
-			eleitoP = "LULA";
+		if (porcentLula > porcentBolsonaro) {
 			porcentEleitoP = porcentLula;
-			eleitoG = "TARCISIO GOMES DE FREITAS";
-			porcentEleitoG = porcentTarcisio;
+			eleitoP = "LULA";
 
 		}
-		if(porcentLula < porcentBolsonaro || porcentTarcisio < porcentHaddad) {
-			eleitoP = "BOLSONARO";
+		if (porcentLula < porcentBolsonaro) {
 			porcentEleitoP = porcentBolsonaro;
-			eleitoG = "FERNANDO HADDAD";
-			porcentEleitoG = porcentBolsonaro;
-			
-		}
-		else {
-			eleitoP = "(CANDIDATO)";
-			porcentEleitoP = 0;
-			eleitoG = "(CANDIDATO)";
-			porcentEleitoG = 0;
+			eleitoP = "BOLSONARO";
 
 		}
+		if (porcentTarcisio > porcentHaddad) {
+			porcentEleitoG = porcentTarcisio;
+			eleitoG = "TARCISIO GOMES DE FREITAS";
+
+		}
+		if (porcentTarcisio < porcentHaddad) {
+			porcentEleitoG = porcentHaddad;
+			eleitoG = "FERNANDO HADDAD";
+
+		}
+		if (porcentLula == porcentBolsonaro)
+			eleitoP = "(CANDIDATO)";
+		if (porcentHaddad == porcentTarcisio)
+			eleitoG = "(CANDIDATO)";
 	}
 
 	public static void main(String[] args) {
@@ -123,51 +126,51 @@ public class Main {
 
 			try (BufferedReader br = new BufferedReader(
 					new FileReader("./src/aula17/exercicios1/eleicao/bd/eleicao.csv"))) {
-				String linha = null;
+				String linha = br.readLine();
 
-				while ((linha = br.readLine()) != null) {
+				while (linha != null) {
 					String vetor[] = linha.split(";");
 
 					if (i != 0) {
 
 						if (vetor[0].equals("JAIR MESSIAS BOLSONARO")) {
 							contBolsonaro++;
-							
+
 						}
 
 						if (vetor[0].equals("TARCISIO GOMES DE FREITAS")) {
 							contTarcisio++;
-							
+
 						}
 
 						if (vetor[0].equals("LUIZ INACIO LULA DA SILVA")) {
 							contLula++;
-							
+
 						}
 
 						if (vetor[0].equals("FERNANDO HADDAD")) {
 							contHaddad++;
-							
+
 						}
 
 						if (vetor[0].equals("PRESIDENTE : VOTO BRANCO")) {
 							contBrancoP++;
-							
+
 						}
 
 						if (vetor[0].equals("GOVERNADOR : VOTO BRANCO")) {
 							contBrancoG++;
-							
+
 						}
 
 						if (vetor[0].equals("PRESIDENTE : VOTO NULO")) {
 							contNuloP++;
-							
+
 						}
 
 						if (vetor[0].equals("GOVERNADOR : VOTO NULO")) {
 							contNuloG++;
-							
+
 						}
 
 						contTotal++;
