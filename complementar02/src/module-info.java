@@ -5,5 +5,5 @@
  * @author isaac
  *
  */
-module Heranca {
+module complementar02 {
 }
