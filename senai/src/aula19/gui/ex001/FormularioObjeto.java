@@ -3,6 +3,9 @@ package aula19.gui.ex001;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -80,8 +83,16 @@ public class FormularioObjeto extends JFrame implements ActionListener {
 
 		if (e.getSource() == botao) {
 			Pessoa p = new Pessoa(campoNome.getText(), campoIdade.getText());
-
 			areaResultado.setText(p.toString());
+			
+			try {
+				BufferedWriter bw = new BufferedWriter(new FileWriter("./src/aula19/gui/ex001/bd/dados.csv", true));
+				bw.write(p.toCSV());
+				bw.close();
+				
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if (e.getSource() == limpar) {
 

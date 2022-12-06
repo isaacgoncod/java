@@ -30,6 +30,10 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", idade=" + idade + "]";
+		return "Pessoa [nome=" + nome + ", idade=" + idade + ", faseDaVida()=" + faseDaVida() + "]";
+	}
+
+	public String toCSV() {
+		return String.format("%s;%d;%s\r\n", nome, idade, faseDaVida());
 	}
 }

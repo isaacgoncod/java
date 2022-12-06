@@ -88,7 +88,7 @@ public class Main {
 
 		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
 		for (int i = 0; i < funcionarios.size(); i++) {
-			if (funcionarios) {
+			if (funcionarios.get(i).contains(matricula)) {
 				System.out.println(i + "\t" + funcionarios.get(i));
 			}
 		}
@@ -96,10 +96,10 @@ public class Main {
 
 	public static void buscarDataNascimento() {
 
-		Calendar data = Calendar.getInstance();
+		String data ;
 
 		System.out.println("Digite a data de nascimento do funcionario: ");
-		data = scan.nextInt();
+		data = scan.next();
 
 		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
 		for (int i = 0; i < funcionarios.size(); i++) {
