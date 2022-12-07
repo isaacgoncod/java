@@ -1,4 +1,4 @@
-package aula19.gui.avaliacao_de_saude;
+package aula19.gui.avaliacao.saude;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

@@ -2,7 +2,6 @@ package aula17.rh.funcionarios;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Scanner;
 
 public class Main {
@@ -79,36 +78,6 @@ public class Main {
 		}
 	}
 
-	public static void buscarMatricula() {
-
-		int matricula;
-
-		System.out.println("Digite o número da matricula do funcionario: ");
-		matricula = scan.nextInt();
-
-		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
-		for (int i = 0; i < funcionarios.size(); i++) {
-			if (funcionarios.get(i).contains(matricula)) {
-				System.out.println(i + "\t" + funcionarios.get(i));
-			}
-		}
-	}
-
-	public static void buscarDataNascimento() {
-
-		String data ;
-
-		System.out.println("Digite a data de nascimento do funcionario: ");
-		data = scan.next();
-
-		System.out.println("Indice\tMatricula\tNome\tdataNascimento");
-		for (int i = 0; i < funcionarios.size(); i++) {
-			if (funcionarios.get(i).getNascimento().contains(data)) {
-				System.out.println(i + "\t" + funcionarios.get(i));
-			}
-		}
-	}
-
 	public static void main(String[] args) throws ParseException {
 
 		while (menu != 8) {
@@ -138,11 +107,9 @@ public class Main {
 
 				break;
 			case 6:
-				buscarMatricula();
 
 				break;
 			case 7:
-				buscarDataNascimento();
 
 				break;
 			case 8:

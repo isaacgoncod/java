@@ -1,4 +1,4 @@
-package aula19.gui.avaliacao_de_saude;
+package aula19.gui.avaliacao.saude;
 
 public class Paciente {
 
@@ -10,38 +10,14 @@ public class Paciente {
 		this.nome = nome;
 
 		try {
-
 			this.peso = Float.parseFloat(peso);
 			this.altura = Float.parseFloat(altura);
+
 		} catch (Exception e) {
 			this.peso = 0;
 			this.altura = 0;
+
 		}
-
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public float getPeso() {
-		return peso;
-	}
-
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
-
-	public float getAltura() {
-		return altura;
-	}
-
-	public void setAltura(float altura) {
-		this.altura = altura;
 	}
 
 	public float obterIMC() {
@@ -65,7 +41,7 @@ public class Paciente {
 
 	@Override
 	public String toString() {
-		return "obterIMC()=" + obterIMC() + ", obterDiagnostico()=" + obterDiagnostico() + "]";
+		return "Nome: " + nome + "\nIMC: " + obterIMC() + "\nDiagnostico: " + obterDiagnostico() + "\n\n";
 	}
 
 	public String toCSV() {
