@@ -1,4 +1,4 @@
-package aula19.gui.avaliacao.saude;
+package aula19.gui.exercicios.ex001;
 
 public class Paciente {
 

@@ -1,4 +1,4 @@
-package aula19.gui.ex001;
+package aula19.gui.exemplos.ex001;
 
 import javax.swing.JOptionPane;
 
