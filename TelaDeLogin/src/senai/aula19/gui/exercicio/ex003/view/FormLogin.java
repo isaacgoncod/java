@@ -63,9 +63,9 @@ public class FormLogin extends JFrame implements ActionListener {
 				Login login = new Login(tfNome.getText(), new String(pfSenha.getPassword()));
 
 				if (lp.sucesso(login)) {
-					JOptionPane.showMessageDialog(this, "Acesso permitido");
+					JOptionPane.showMessageDialog(this, "Acesso Permitido");
 				} else {
-					JOptionPane.showMessageDialog(this, "Acesso negado");
+					JOptionPane.showMessageDialog(this, "Acesso Negado");
 				}
 
 			} else {

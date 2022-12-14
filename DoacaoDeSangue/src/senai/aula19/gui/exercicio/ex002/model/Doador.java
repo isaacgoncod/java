@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 public class Doador {
 
 	// Atributos
+	private String cpf;
 	private String nome;
 	private int idade;
 	private char sexo;
@@ -18,8 +19,9 @@ public class Doador {
 	private DecimalFormat df = new DecimalFormat("#.0");
 	
 	// Método Construtor cheio com Strings
-	public Doador(String nome, String idade, String sexo, String peso) {
+	public Doador(String cpf, String nome, String idade, String sexo, String peso) {
 		df.setCurrency(Currency.getInstance(BRASIL));
+		this.cpf = cpf;
 		this.nome = nome;
 		this.sexo = sexo.charAt(0);
 		try {
@@ -33,11 +35,12 @@ public class Doador {
 	public Doador(String linha) {
 		df.setCurrency(Currency.getInstance(BRASIL));
 		String colunas[] = linha.split(";");
-		this.nome = colunas[0];
-		this.sexo = colunas[2].charAt(0);
+		this.cpf = colunas[0];
+		this.nome = colunas[1];
+		this.sexo = colunas[3].charAt(0);
 		try {
-			this.idade = Integer.parseInt(colunas[1]);
-			this.peso = Float.parseFloat(df.parse(colunas[3]).toString());
+			this.idade = Integer.parseInt(colunas[2]);
+			this.peso = Float.parseFloat(df.parse(colunas[4]).toString());
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e);
 		}
@@ -54,16 +57,16 @@ public class Doador {
 	// Saida
 	@Override
 	public String toString() {
-		return String.format("%s\t%d\t%s\t%.1f\t%s", nome, idade, sexo, peso, obterDiagnostico());
+		return String.format("%s\t%s\t%d\t%s\t%.1f\t%s",cpf, nome, idade, sexo, peso, obterDiagnostico());
 	}
 
 	public String[] toTable() {
-		return new String[] { nome, String.format("%d", idade), String.format("%c", sexo), String.format("%.1f", peso),
+		return new String[] { cpf, nome, String.format("%d", idade), String.format("%c", sexo), String.format("%.1f", peso),
 				obterDiagnostico() };
 	}
 
 	public String toCSV() {
-		return String.format("%s;%d;%s;%.1f;%s\r\n", nome, idade, sexo, peso, obterDiagnostico());
+		return String.format("%s;%s;%d;%s;%.1f;%s\r\n",cpf, nome, idade, sexo, peso, obterDiagnostico());
 	}
 
 }

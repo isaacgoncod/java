@@ -21,10 +21,10 @@ public class FormDoador extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 4L;
 	JPanel painel;
-	JLabel lbNome, lbIdade, lbSexo, lbPeso, lbResult;
-	JTextField tfNome, tfIdade, tfPeso;
+	JLabel lbNome, lbCpf, lbIdade, lbSexo, lbPeso, lbResult;
+	JTextField tfNome, tfCpf, tfIdade, tfPeso;
 	JComboBox<String> cbSexo;
-	JButton btAdicionar, btLimpar;
+	JButton btAdicionar, btLimparCampos, btExcluirDoador;
 	JTable taResult;
 	DefaultTableModel tableModel;
 	JScrollPane barraRolagem;
@@ -50,9 +50,21 @@ public class FormDoador extends JFrame implements ActionListener {
 		lbSexo.setBounds(10, 70, 100, 30);
 		painel.add(lbSexo);
 
+		lbCpf = new JLabel("CPF:");
+		lbCpf.setBounds(250, 70, 100, 30);
+		painel.add(lbCpf);
+
+		tfCpf = new JTextField();
+		tfCpf.setBounds(280, 70, 100, 30);
+		painel.add(tfCpf);
+
 		lbPeso = new JLabel("Peso:");
-		lbPeso.setBounds(300, 70, 100, 30);
+		lbPeso.setBounds(475, 70, 100, 30);
 		painel.add(lbPeso);
+
+		tfPeso = new JTextField();
+		tfPeso.setBounds(510, 70, 100, 30);
+		painel.add(tfPeso);
 
 		tfNome = new JTextField();
 		tfNome.setBounds(110, 10, 500, 30);
@@ -66,25 +78,27 @@ public class FormDoador extends JFrame implements ActionListener {
 		cbSexo.setBounds(110, 70, 100, 30);
 		painel.add(cbSexo);
 
-		tfPeso = new JTextField();
-		tfPeso.setBounds(400, 70, 210, 30);
-		painel.add(tfPeso);
-
 		lbResult = new JLabel("Resultado:");
 		lbResult.setBounds(10, 100, 100, 30);
 		painel.add(lbResult);
 
 		btAdicionar = new JButton("Adicionar");
-		btAdicionar.setBounds(400, 100, 105, 30);
+		btAdicionar.setBounds(290, 100, 105, 30);
 		painel.add(btAdicionar);
 		btAdicionar.addActionListener(this);
 
-		btLimpar = new JButton("Limpar");
-		btLimpar.setBounds(505, 100, 105, 30);
-		painel.add(btLimpar);
-		btLimpar.addActionListener(this);
+		btLimparCampos = new JButton("Lmp.Campo");
+		btLimparCampos.setBounds(395, 100, 105, 30);
+		painel.add(btLimparCampos);
+		btLimparCampos.addActionListener(this);
+
+		btExcluirDoador = new JButton("Exc.Doador");
+		btExcluirDoador.setBounds(505, 100, 105, 30);
+		painel.add(btExcluirDoador);
+		btExcluirDoador.addActionListener(this);
 
 		tableModel = new DefaultTableModel();
+		tableModel.addColumn("CPF");
 		tableModel.addColumn("Nome");
 		tableModel.addColumn("Idade");
 		tableModel.addColumn("Sexo");
@@ -99,25 +113,29 @@ public class FormDoador extends JFrame implements ActionListener {
 	}
 
 	public void preencherTabela() {
-		for(Doador d: dd.abrir()) {
+		for (Doador d : dd.abrir()) {
 			tableModel.addRow(d.toTable());
 		}
 	}
-	
-	public void limparTabela() {
+
+//	public void limparTabela() {
+//		int tamanho = tableModel.getRowCount();
+//		for (int i = 0; i < tamanho; i++)
+//			tableModel.removeRow(0);
+//	}
+
+	public void limparLinha() {
 		int tamanho = tableModel.getRowCount();
-		for (int i = 0; i < tamanho; i++)
-			tableModel.removeRow(0);
+		tableModel.removeRow(tamanho - 1);
 	}
-	
+
 	public void prepararArquivo() {
 		int tamanho = tableModel.getRowCount();
 		String saidaArquivo = "";
 		for (int i = 0; i < tamanho; i++) {
-			Doador d = new Doador(tableModel.getValueAt(i, 0).toString(),
-					tableModel.getValueAt(i, 1).toString(),
-					tableModel.getValueAt(i, 2).toString(),
-					tableModel.getValueAt(i, 3).toString());
+			Doador d = new Doador(tableModel.getValueAt(i, 0).toString(), tableModel.getValueAt(i, 1).toString(),
+					tableModel.getValueAt(i, 2).toString(), tableModel.getValueAt(i, 3).toString(),
+					tableModel.getValueAt(i, 4).toString());
 			saidaArquivo += d.toCSV();
 		}
 		dd.salvar(saidaArquivo);
@@ -125,21 +143,25 @@ public class FormDoador extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btLimpar) {
+		if (e.getSource() == btLimparCampos) {
 			tfNome.setText("");
+			tfCpf.setText("");
 			tfIdade.setText("");
 			tfPeso.setText("");
-			limparTabela();
+			
 		}
 		if (e.getSource() == btAdicionar) {
 			if (tfNome.getText().length() > 0 && tfIdade.getText().length() > 0 && tfPeso.getText().length() > 0) {
-				Doador d = new Doador(tfNome.getText(), tfIdade.getText(), cbSexo.getSelectedItem().toString(),
-						tfPeso.getText());
+				Doador d = new Doador(tfCpf.getText(), tfNome.getText(), tfIdade.getText(),
+						cbSexo.getSelectedItem().toString(), tfPeso.getText());
 				tableModel.addRow(d.toTable());
 				prepararArquivo();
 			} else {
 				JOptionPane.showMessageDialog(this, "Favor preencher todos os campos");
 			}
+		}
+		if (e.getSource() == btExcluirDoador) {
+
 		}
 	}
 }

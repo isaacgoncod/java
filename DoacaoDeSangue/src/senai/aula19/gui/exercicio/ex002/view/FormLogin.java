@@ -18,8 +18,7 @@ public class FormLogin extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 2L;
 	private JPanel painel;
-	private JLabel lbNome;
-	private JLabel lbSenha;
+	private JLabel lbNome, lbSenha;
 	private JTextField tfNome;
 	private JPasswordField pfSenha;
 	private JButton btLogin;
@@ -36,20 +35,16 @@ public class FormLogin extends JFrame implements ActionListener {
 		lbNome = new JLabel("Nome:");
 		lbNome.setBounds(20, 20, 100, 20);
 		painel.add(lbNome);
-
 		tfNome = new JTextField();
 		tfNome.setBounds(120, 20, 350, 30);
 		painel.add(tfNome);
-
 		lbSenha = new JLabel("Senha:");
 		lbSenha.setBounds(20, 60, 100, 20);
 		painel.add(lbSenha);
-
 		pfSenha = new JPasswordField();
 		pfSenha.setEchoChar('*');
 		pfSenha.setBounds(120, 60, 350, 30);
 		painel.add(pfSenha);
-
 		btLogin = new JButton("Entrar");
 		btLogin.setBounds(370, 100, 100, 30);
 		painel.add(btLogin);
@@ -61,15 +56,13 @@ public class FormLogin extends JFrame implements ActionListener {
 		if (e.getSource() == btLogin) {
 			if (tfNome.getText().length() > 0 && new String(pfSenha.getPassword()).length() > 0) {
 				Login login = new Login(tfNome.getText(), new String(pfSenha.getPassword()));
-
 				if (lp.sucesso(login)) {
-					JOptionPane.showMessageDialog(this, "Acesso permitido");
-				} else {
+					new FormDoador().setVisible(true);
+					this.dispose();
+				} else
 					JOptionPane.showMessageDialog(this, "Acesso negado");
-				}
-
 			} else {
-				JOptionPane.showMessageDialog(this, "Preencha os campos obrigatórios.");
+				JOptionPane.showMessageDialog(this, "Preencha os campos obrigatórios");
 			}
 		}
 	}
@@ -77,4 +70,5 @@ public class FormLogin extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		new FormLogin().setVisible(true);
 	}
+
 }
