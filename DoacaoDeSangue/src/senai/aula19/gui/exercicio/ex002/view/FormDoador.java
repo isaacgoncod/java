@@ -1,4 +1,4 @@
-package aula19.gui.exercicios.ex002.application;
+package senai.aula19.gui.exercicio.ex002.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,25 +14,23 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import aula19.gui.exercicios.ex002.dao.DoadorDAO;
-import aula19.gui.exercicios.ex002.models.Doador;
+import senai.aula19.gui.exercicio.ex002.dao.DoadorDAO;
+import senai.aula19.gui.exercicio.ex002.model.Doador;
 
-public class Main extends JFrame implements ActionListener {
-	
+public class FormDoador extends JFrame implements ActionListener {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4L;
 	JPanel painel;
 	JLabel lbNome, lbIdade, lbSexo, lbPeso, lbResult;
-	JTextField tfNome, tfIdade, tfSexo, tfPeso;
-	JButton btAdicionar, btLimpar;
+	JTextField tfNome, tfIdade, tfPeso;
 	JComboBox<String> cbSexo;
-	JScrollPane barraRolagem;
-	JTable tabResult;
+	JButton btAdicionar, btLimpar;
+	JTable taResult;
 	DefaultTableModel tableModel;
-	String saidaArquivo = "";
+	JScrollPane barraRolagem;
 	DoadorDAO dd = new DoadorDAO();
 
-	Main() {
+	FormDoador() {
 		setTitle("Doação de Sangue");
 		setBounds(500, 200, 640, 480);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -48,7 +46,7 @@ public class Main extends JFrame implements ActionListener {
 		lbIdade.setBounds(10, 40, 100, 30);
 		painel.add(lbIdade);
 
-		lbSexo = new JLabel("Sexo: ");
+		lbSexo = new JLabel("Sexo:");
 		lbSexo.setBounds(10, 70, 100, 30);
 		painel.add(lbSexo);
 
@@ -91,20 +89,38 @@ public class Main extends JFrame implements ActionListener {
 		tableModel.addColumn("Idade");
 		tableModel.addColumn("Sexo");
 		tableModel.addColumn("Peso");
-		tableModel.addColumn("Diagnostico");
-		tabResult = new JTable();
-		barraRolagem = new JScrollPane(tabResult);
+		tableModel.addColumn("Diagnóstico");
+		preencherTabela();
+		taResult = new JTable(tableModel);
+		barraRolagem = new JScrollPane(taResult);
 		barraRolagem.setBounds(10, 130, 600, 300);
-		painel.add(tabResult);
+		painel.add(barraRolagem);
 
 	}
 
+	public void preencherTabela() {
+		for(Doador d: dd.abrir()) {
+			tableModel.addRow(d.toTable());
+		}
+	}
+	
 	public void limparTabela() {
 		int tamanho = tableModel.getRowCount();
-
-		for (int i = 0; i < tamanho; i++) {
+		for (int i = 0; i < tamanho; i++)
 			tableModel.removeRow(0);
+	}
+	
+	public void prepararArquivo() {
+		int tamanho = tableModel.getRowCount();
+		String saidaArquivo = "";
+		for (int i = 0; i < tamanho; i++) {
+			Doador d = new Doador(tableModel.getValueAt(i, 0).toString(),
+					tableModel.getValueAt(i, 1).toString(),
+					tableModel.getValueAt(i, 2).toString(),
+					tableModel.getValueAt(i, 3).toString());
+			saidaArquivo += d.toCSV();
 		}
+		dd.salvar(saidaArquivo);
 	}
 
 	@Override
@@ -113,29 +129,17 @@ public class Main extends JFrame implements ActionListener {
 			tfNome.setText("");
 			tfIdade.setText("");
 			tfPeso.setText("");
-			saidaArquivo = "";
-			tableModel.removeRow(0);
+			limparTabela();
 		}
 		if (e.getSource() == btAdicionar) {
 			if (tfNome.getText().length() > 0 && tfIdade.getText().length() > 0 && tfPeso.getText().length() > 0) {
 				Doador d = new Doador(tfNome.getText(), tfIdade.getText(), cbSexo.getSelectedItem().toString(),
 						tfPeso.getText());
-				saidaArquivo = d.toCSV();
 				tableModel.addRow(d.toTable());
+				prepararArquivo();
 			} else {
 				JOptionPane.showMessageDialog(this, "Favor preencher todos os campos");
 			}
-			Doador d = new Doador(tfNome.getText(), tfIdade.getText(), cbSexo.getSelectedItem().toString(),
-					tfPeso.getText());
-			tableModel.addRow(d.toTable());
-
-			dd.salvar(saidaArquivo);
-
 		}
 	}
-
-	public static void main(String[] args) {
-		new Main().setVisible(true);
-	}
-
 }
