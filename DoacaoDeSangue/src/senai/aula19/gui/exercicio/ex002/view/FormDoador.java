@@ -20,6 +20,7 @@ import senai.aula19.gui.exercicio.ex002.model.Doador;
 public class FormDoador extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 4L;
+	static int j = 0;
 	JPanel painel;
 	JLabel lbNome, lbCpf, lbIdade, lbSexo, lbPeso, lbResult;
 	JTextField tfNome, tfCpf, tfIdade, tfPeso;
@@ -141,6 +142,23 @@ public class FormDoador extends JFrame implements ActionListener {
 		dd.salvar(saidaArquivo);
 	}
 
+	public void procurarCpf() {
+		String excluirCpf = JOptionPane.showInputDialog("Digite o CPF do Doador:");
+		
+		
+		for (int i = 0; i < tableModel.getRowCount(); i++) {
+			if (excluirCpf.equals(tableModel.getValueAt(i, 0).toString())) {
+				tableModel.removeRow(i);
+				prepararArquivo();
+				j = 0;
+				break;
+			}else {
+				j++;
+			}
+		}
+
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btLimparCampos) {
@@ -148,7 +166,7 @@ public class FormDoador extends JFrame implements ActionListener {
 			tfCpf.setText("");
 			tfIdade.setText("");
 			tfPeso.setText("");
-			
+
 		}
 		if (e.getSource() == btAdicionar) {
 			if (tfNome.getText().length() > 0 && tfIdade.getText().length() > 0 && tfPeso.getText().length() > 0) {
@@ -161,7 +179,11 @@ public class FormDoador extends JFrame implements ActionListener {
 			}
 		}
 		if (e.getSource() == btExcluirDoador) {
-
+			procurarCpf();
+			
+			if(j > 0) {
+				JOptionPane.showMessageDialog(this, "Favor preencher todos os campos");
+			}
 		}
 	}
 }
